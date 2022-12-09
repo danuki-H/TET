@@ -20,6 +20,7 @@ body{
     justify-content: center;
     align-items: center;
     z-index: -1;
+    overflow-x: hidden;
 }
 .bg{
     position: absolute;
@@ -42,7 +43,7 @@ body{
 }
 .title p{
     font-family: 'Ruthie', cursive;
-    background-image: radial-gradient(rgb(242, 255, 105),rgb(241, 152, 10));
+    background-image: radial-gradient(rgb(242, 255, 105),rgb(241, 152, 10) 80px);
     -webkit-background-clip: text;
     -moz-background-clip: text;
     -o-background-clip: text;
@@ -62,10 +63,13 @@ body{
 .canh-hoa-2{
     position: absolute;
     left: 0;
-    bottom: 0;
-    transform: translateY(50%) rotateY(180deg);
+    bottom: -20%;
+    transform:rotateY(180deg);
 }
 .section{
     padding: 50px;
     font-size: 1.7rem;
+    background-image: linear-gradient(transparent,#333 50px);
+    color: #fff;
+    transform: translateY(-50px);
 }
