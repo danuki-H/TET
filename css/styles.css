@@ -6,7 +6,18 @@
     list-style: none;
     text-decoration: none;
 }
-
+body{
+    margin: 0;
+}
+.container{
+    
+}
+.card{
+    
+}
+.year{
+    
+}
 @media (min-width:450px) and (max-width: 689px) {
 
 }
