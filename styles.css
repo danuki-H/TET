@@ -18,6 +18,9 @@ body{
     height: 100vh;
     position: relative;
     overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .header{
     z-index: 10;
@@ -25,9 +28,64 @@ body{
 }
 .section{
     z-index: 20;
-    background-color: aliceblue;
 }
 .footer{
     z-index: 30;
     background-color: aqua;
+}
+.bg{
+    background-image: url('image/bg-1.png');
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    z-index: 1;
+}
+.ca{
+    width: min(55%, 200px);
+    border-radius: 50%;
+    z-index: 10;
+    border: 5px solid rgb(255, 202, 77);
+    box-shadow: 0 0 10px rgb(255, 247, 228);
+}
+.may-1,.may-2{
+    position: absolute;
+    top:0;
+    width: min(50%, 300px);
+    z-index: 20;
+}
+.may-2{
+    top: 30%;
+    right: 100%;
+}
+.may-1{
+    left: 100%;
+}
+.nui{
+    position: absolute;
+    width: 100%;
+    top: 100%;
+    z-index: 15;
+}
+.bg-thiep{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url('image/bg.jpg');
+    background-size: cover;
+    background-position: center;
+    z-index: 20;
+}
+.lan{
+    width: min(80%, 400px);
+    position: absolute;
+    z-index: 21;
+    top: 100%;
+}
+@media (min-width:450px) and (max-width: 689px) {
+
+}
+@media (max-width:449px) {
+    
 }
