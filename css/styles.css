@@ -125,6 +125,7 @@ body{
     margin:10px auto;
     border-radius: 30px;
     cursor: pointer;
+    border: none;
 }
 .item-1 .text{
 }
