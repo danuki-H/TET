@@ -66,6 +66,7 @@ body{
     display: flex;
     justify-content: flex-start;
     align-items: center;
+    z-index: 100;
 }
 .cards{
     position: absolute;
@@ -73,6 +74,7 @@ body{
     width: auto;
     display: flex;
     margin: 20px;
+    z-index: 100;
 }
 .item{
     position: relative;
@@ -100,6 +102,45 @@ body{
 .title{
     position: absolute;
     width: 100%;
+    height: auto;
+    bottom: 0;
+    padding:0 20px;
+    box-sizing: border-box;
+}
+.title .text{
+    font-size: large;
+    color: rgb(64, 26, 26);
+    text-align: center;
+}
+.title .btn{
+    width: max-content;
+    padding: 0 20px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    box-sizing: border-box;
+    background-color: #ff0000;
+    margin:10px auto;
+    border-radius: 30px;
+    cursor: pointer;
+}
+.item-1 .text{
+}
+.item-2 .btn{
+    padding: 0;
+}
+.btn:active{
+    transform: scale(0.9);
+}
+.item-2 .btn a{
+    color: #fff;
+    display: flex;
+    height: 40px;
+    width: 40px;
+    justify-content: center;
+    align-items: center;
 }
 .year{
     position: absolute;
@@ -107,6 +148,22 @@ body{
     right: 0;
     transform: translateY(-50%);
     width: 350px;
+}
+/* Animation */
+.item{
+    transform: translateX(-100%);
+    animation: card-translate 0.6s ease-out forwards;
+}
+.item-1{
+    animation-duration: 0.9s;
+}
+@keyframes card-translate{
+    form{
+        transform: translateX(-100%);
+    }
+    to{
+        transform: translateX(0);
+    }
 }
 @media (max-width: 930px) {
     .year{
@@ -117,6 +174,9 @@ body{
     }
     .item{
         width: 200px;
+    }
+    .title .text{
+        color:#011e2c;
     }
 }
 @media (min-width:450px) and (max-width: 720px) {
@@ -170,5 +230,46 @@ body{
         -ms-clip-path: circle(100% at 0 50%);
         -o-clip-path: circle(100% at 0 50%);
         clip-path: circle(100% at 0 50%);
+    }
+    .title{
+        width: 50%;
+        right: 0;
+    }
+    .title .text{
+        font-size: 13px;
+    }
+    .item-1 .title .text{
+        text-align: left;
+        font-size: 12px;
+        margin-top: 10px;
+        margin-left:10px;
+    }
+    .title .btn{
+        height: 30px;
+        width: 100px;
+        font-size: 12px;
+    }
+    .item-2 .image{
+        width: 100%;
+        -webkit-clip-path: none;
+        -moz-clip-path: none;
+        -ms-clip-path: none;
+        -o-clip-path: none;
+        clip-path: none;
+    }
+    .item-2 .title{
+        width: 100%;
+    }
+    .item-2 .title .text{
+        font-size: 18px;
+        color: #fff;
+    }
+}
+@media (max-height:700px) and (max-width:450px){
+    .year{
+        top: 0;
+    }
+    .cards{
+        margin-bottom: 20px;
     }
 }
