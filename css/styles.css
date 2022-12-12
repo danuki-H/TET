@@ -199,7 +199,7 @@ body{
     z-index: 199;
     width: 700px;
 }
-.loi-chuc .family,.loi-chuc p{
+.loi-chuc .family,.loi-chuc span{
     z-index: 200;
     position: absolute;
     width: 200px;
@@ -253,7 +253,7 @@ body{
     .loi-chuc .bg-thiep{
         width: 500px;
     }
-    .loi-chuc .family,.loi-chuc p{
+    .loi-chuc .family,.loi-chuc span{
         left: 5%;
     }
 }
