@@ -94,7 +94,7 @@ body{
     margin:0 10px;
     box-shadow: 3px 3px 2px rgba(0, 0, 0, 0.42);
     overflow: hidden;
-    background-color: #ffdcc0;
+    background-color: #fff3e9;
 }
 .image{
     position: absolute;
@@ -136,12 +136,16 @@ body{
     border-radius: 30px;
     cursor: pointer;
     border: none;
+    transition: all .3s ease-in;
 }
 .item-2 .btn{
     padding: 0;
 }
-.btn:active{
+.btn:active,
+.btn:hover{
     transform: scale(0.9);
+    box-shadow:0 0 5px #ff0000,
+    0 0 15px #ff0000;
 }
 .item-2 .btn a{
     color: #fff;
@@ -177,27 +181,36 @@ body{
 .thiep-chuc{
     position: absolute;
     z-index: 200;
-    width: 700px;
-    height: 400px;
+    width: 0px;
+    height: 0px;
     display: flex;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.44);
+    border-radius: 20px;
     align-items: center;
     justify-content: center;
-}
-.loi-chuc{
-    width: 100%;
-    height: 100%;
-    position: absolute;
     overflow: hidden;
+}
+.thoat{
+    z-index: 300;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: x-large;
+}
+
+.loi-chuc{
+    width: 700px;
+    height: 400px;
+    background-image: url("../image/bg-thiep.jpg");
+    background-size: cover;
+    background-position: center;
+    position: absolute;
     border: 2px solid rgb(245, 132, 12);
     border-radius: 20px;
     box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.324);
     display: flex;
     align-items: center;
-}
-.loi-chuc .bg-thiep{
-    position: absolute;
-    z-index: 199;
-    width: 700px;
+    justify-content: center;
 }
 .loi-chuc .family,.loi-chuc span{
     z-index: 200;
@@ -207,7 +220,6 @@ body{
     left: 10%;
     border-radius: 50%;
     box-shadow: inset 0px 0px 7px rgba(0, 0, 0, 0.704);
-    
 }
 
 .loi-chuc-p{
@@ -215,12 +227,53 @@ body{
     position: absolute;
     right: 0;
     padding: 20px;
+    width: 50%;
+    font-weight: bold;
+    color: #600d0d;
+    font-size: x-large;
+
 }
 .thiep-chuc.active{
-    animation:thiep-chuc linear;
+    width: 700px;
+    height: 400px;
+    animation:thiep-chuc 1s linear;
+}
+.thiep-chuc.exit{
+    width: 0;
+    height: 0;
+    animation:thiep-chuc-exit .5s linear;
 }
 @keyframes thiep-chuc {
-    
+    0%{
+        width: 0px;
+        height: 0px;
+    }
+    30%{
+        width: 50px;
+        height: 50px;
+    }
+    70%{
+        height: 50px;
+        width: 700px;
+    }
+    100%{
+        width: 700px;
+        height: 400px;
+    }
+}
+@keyframes thiep-chuc-exit {
+    0%{
+        width: 700px;
+        height: 400px;
+    }
+    70%{
+        width: 700px;
+        height: 0;
+    }
+    100%{
+        width: 0;
+        height: 0;
+    }
 }
 @media (max-width: 930px) {
     .year{
@@ -246,15 +299,51 @@ body{
     .item{
         width: 170px;
     }
-    .thiep-chuc{
+    .loi-chuc,
+    .thiep-chuc.active{
         width: 500px;
         height: 286px;
     }
-    .loi-chuc .bg-thiep{
-        width: 500px;
+    @keyframes thiep-chuc {
+        0%{
+            width: 0px;
+            height: 0px;
+        }
+        30%{
+            width: 50px;
+            height: 50px;
+        }
+        70%{
+            height: 50px;
+            width: 500px;
+        }
+        100%{
+            width: 500px;
+            height: 286px;
+        }
+    }
+    @keyframes thiep-chuc-exit {
+        0%{
+            width: 500px;
+            height: 286px;
+        }
+        70%{
+            width: 500px;
+            height: 0;
+        }
+        100%{
+            width: 0;
+            height: 0;
+        }
     }
     .loi-chuc .family,.loi-chuc span{
+        width: 170px;
+        height: 170px;
         left: 5%;
+    }
+    
+    .loi-chuc-p{
+        font-size: large;
     }
 }
 @media (max-width:449px) {
@@ -331,13 +420,56 @@ body{
         font-size: 18px;
         color: #fff;
     }
-    .thiep-chuc{
-        width: 350px;
-        height: auto;
+    .loi-chuc,
+    .thiep-chuc.active{
+        width: 300px;
+        height: 600px;
     }
-    .loi-chuc .bg-thiep{
-        width: 350px;
+    @keyframes thiep-chuc {
+        0%{
+            width: 0px;
+            height: 0px;
+        }
+        30%{
+            width: 50px;
+            height: 50px;
+        }
+        70%{
+            height: 50px;
+            width: 300px;
+        }
+        100%{
+            width: 300px;
+            height: 600px;
+        }
     }
+    @keyframes thiep-chuc-exit {
+        0%{
+            width: 300px;
+            height: 600px;
+        }
+        70%{
+            width: 300px;
+            height: 0;
+        }
+        100%{
+            width: 0;
+            height: 0;
+        }
+    }
+    .loi-chuc .family,.loi-chuc span{
+        left:auto;
+        top: 5%;
+    }
+    .loi-chuc-p{
+        width: 90%;
+        right: auto;
+        font-size: large;
+        height: 50%;
+        bottom: 0;
+        color: #0e175a;
+    }
+
 }
 @media (max-height:700px) and (max-width:450px){
     .year{
