@@ -24,6 +24,7 @@ window.addEventListener("load", function(){
  */
 let iconVolume = document.querySelector('#icon-volume');
 let audioTET = document.getElementById('audio-tet');
+audioTET.play();
 audioTET.loop = true;
 let isMuted = 0;
 document.querySelector('#Muted').addEventListener('click', () => {
