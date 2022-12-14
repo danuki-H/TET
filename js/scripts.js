@@ -1,9 +1,12 @@
 //
+/**
+ * Audio
+ */
 window.addEventListener("load", function(){
-    let preload = document.getElementById('preload');
+    let pre_Loader = document.getElementById('pre-loader');
     let items = document.querySelectorAll('.item');
     let thiepChuc = document.querySelector('.thiep-chuc');
-    preload.style.display = 'none';
+    pre_Loader.style.display = 'none';
     items.forEach(item => {
         item.classList.add('active');
     });
@@ -24,7 +27,9 @@ window.addEventListener("load", function(){
  */
 let iconVolume = document.querySelector('#icon-volume');
 let audioTET = document.getElementById('audio-tet');
-audioTET.play();
+setTimeout(() => {
+    audioTET.play();
+},1500);
 audioTET.loop = true;
 let isMuted = 0;
 document.querySelector('#Muted').addEventListener('click', () => {
