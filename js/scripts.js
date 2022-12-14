@@ -1,9 +1,9 @@
 //
 window.addEventListener("load", function(){
-    let loader = document.querySelector('.loader');
+    let preload = document.getElementById('preload');
     let items = document.querySelectorAll('.item');
     let thiepChuc = document.querySelector('.thiep-chuc');
-    loader.style.display = 'none';
+    preload.style.display = 'none';
     items.forEach(item => {
         item.classList.add('active');
     });
@@ -30,12 +30,10 @@ document.querySelector('#Muted').addEventListener('click', () => {
     isMuted++;
     iconVolume.classList.toggle('fa-volume-low');
     iconVolume.classList.toggle('fa-volume-xmark');
-    if(isMuted % 2 != 0 ){
+    if(isMuted % 2 != 0){
         audioTET.muted = true;
-        console.log('muted')
     }else{
         audioTET.muted = false;
-        console.log('not muted')
     }
 
 })
