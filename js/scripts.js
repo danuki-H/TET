@@ -16,3 +16,26 @@ window.addEventListener("load", function(){
         thiepChuc.classList.remove('active');
     })
 })
+
+/**
+ * Volume
+ * <i class="fa-solid fa-volume-xmark"></i>
+ * <i class="fa-solid fa-volume-low"></i>
+ */
+let iconVolume = document.querySelector('#icon-volume');
+let audioTET = document.getElementById('audio-tet');
+audioTET.loop = true;
+let isMuted = 0;
+document.querySelector('#Muted').addEventListener('click', () => {
+    isMuted++;
+    iconVolume.classList.toggle('fa-volume-low');
+    iconVolume.classList.toggle('fa-volume-xmark');
+    if(isMuted % 2 != 0 ){
+        audioTET.muted = true;
+        console.log('muted')
+    }else{
+        audioTET.muted = false;
+        console.log('not muted')
+    }
+
+})
