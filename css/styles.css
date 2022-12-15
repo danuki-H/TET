@@ -52,7 +52,7 @@ body{
 .nav li a{
     display: flex;
     height: 50px;
-    font-size: 18px;
+    font-size: 20px;
     padding: 0 20px;
     color: #ffffff;
     align-items: center;
@@ -353,6 +353,7 @@ body{
         display: none;
     }
     .nav li a{
+        height: 40px;
         padding: 15px;
     }
     .nav li a i{

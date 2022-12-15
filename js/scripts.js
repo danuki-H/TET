@@ -1,6 +1,35 @@
-//
 /**
- * Audio
+ * Volume
+ * <i class="fa-solid fa-volume-xmark"></i>
+ * <i class="fa-solid fa-volume-low"></i>
+ */
+let mutedAudio = document.querySelector('#Muted'),
+    iconVolume = document.querySelector('#icon-volume');
+let audioTET = document.getElementById('audio-tet');
+let isMuted = 0;
+
+mutedAudio.style.display = 'none';
+mutedAudio.addEventListener('click', () => {
+    isMuted++;
+    iconVolume.classList.toggle('fa-volume-low');
+    iconVolume.classList.toggle('fa-volume-xmark');
+    if(isMuted % 2 != 0){
+        audioTET.muted = true;
+    }else{
+        audioTET.muted = false;
+    }
+})
+/**
+ * Play Audio
+ */
+let playAudio = document.querySelector('#PlayAudio');
+playAudio.addEventListener('click', function(){
+    playAudio.style.display = 'none';
+    mutedAudio.style.display = 'flex';
+    audioTET.play();
+})
+/**
+ * Window onload
  */
 window.addEventListener("load", function(){
     let pre_Loader = document.getElementById('pre-loader');
@@ -19,27 +48,9 @@ window.addEventListener("load", function(){
         thiepChuc.classList.remove('active');
     })
 })
-
 /**
- * Volume
- * <i class="fa-solid fa-volume-xmark"></i>
- * <i class="fa-solid fa-volume-low"></i>
+ * Flower fall
  */
-let iconVolume = document.querySelector('#icon-volume');
-let audioTET = document.getElementById('audio-tet');
-setTimeout(() => {
-    audioTET.play();
-},1500);
-audioTET.loop = true;
-let isMuted = 0;
-document.querySelector('#Muted').addEventListener('click', () => {
-    isMuted++;
-    iconVolume.classList.toggle('fa-volume-low');
-    iconVolume.classList.toggle('fa-volume-xmark');
-    if(isMuted % 2 != 0){
-        audioTET.muted = true;
-    }else{
-        audioTET.muted = false;
-    }
-
+window.addEventListener('load', function(){
+    
 })

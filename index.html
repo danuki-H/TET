@@ -12,7 +12,7 @@
 </head>
 <body>
     <div class="pre-loader" id="pre-loader">
-        <span class="ct-loader-1"><i>HAPPY NEW YEAR</i></span>
+        <span class="ct-loader-1"><i>HAPPY NEW YEAR<br>2023</i></span>
         <span class="ct-loader-2"><i>Loading...</i></span>
     </div>
     <div class="container">
@@ -23,7 +23,9 @@
                     <li><a href="https://github.com/danuki-H/TET" target="_blank"><i class="fa-brands fa-github"></i><span>Github</span></a></li>
                     <li><a href="https://codepen.io/nqhuy" target="_blank"><i class="fa-brands fa-codepen"></i><span>Codepen</span></a></li>
                     <li><a href="https://www.facebook.com/huy.nhuyen.1447342" target="_blank"><i class="fa-brands fa-facebook"></i><span>Facebook</span></a></li>
-                    <li><a href="#" id="Muted"><i id="icon-volume" class="fa-solid fa-volume-low"></i></a></li>
+                    <li><a href="#" id="PlayAudio"><i class="fa-solid fa-music"></i></a>
+                        <a href="#" id="Muted"><i id="icon-volume" class="fa-solid fa-volume-low"></i></a>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -60,7 +62,7 @@
         </div>
     </div>
     <div class="nhac-nen">
-        <audio id="audio-tet" controls autoplay="autoplay">
+        <audio id="audio-tet" loop>
             <source src="audio/audioTET.mp3" type="audio/mpeg">
         </audio>
     </div>
