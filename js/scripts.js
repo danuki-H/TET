@@ -51,6 +51,24 @@ window.addEventListener("load", function(){
 /**
  * Flower fall
  */
+let divHoa = document.querySelector('.hoa-roi');
 window.addEventListener('load', function(){
-    
+    divHoa.classList.add('active');
+    for(var i = 0; i <= 40; i++){
+        let leftHoa = Math.floor(Math.random() * divHoa.clientWidth);
+        let topHoa = Math.floor(Math.random() * divHoa.clientHeight - 50);
+        let widthHoa = Math.floor(Math.random() * 30);
+        let timeHoa = Math.floor(Math.random() * 5 + 1);
+        let blurHoa = Math.floor(Math.random() * 5);
+        let flower = this.document.createElement('div');
+        flower.classList.add('flower');
+        flower.style.left = leftHoa + 'px';
+        flower.style.top = topHoa + 'px';
+        flower.style.width = widthHoa + 'px';
+        flower.style.height = widthHoa + 'px';
+        flower.style.animationDuration = timeHoa + 's';
+        flower.style.filter = 'blur(' + blurHoa + 'px)';
+        divHoa.appendChild(flower);
+    }
+
 })

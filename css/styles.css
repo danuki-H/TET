@@ -485,3 +485,47 @@ body{
         margin-bottom: 20px;
     }
 }
+/* 
+Hoa roi
+*/
+.hoa-roi{
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 10000;
+    overflow: hidden;
+}
+.hoa-roi.active .flower{
+    position: absolute;
+    width: 35px;
+    height: 35px;
+    background-image: url("../image/hr2.png");
+    background-size: cover;
+    animation: flower 2s linear infinite;
+}
+@keyframes flower {
+    0%{
+        transform: translate(0,0);
+        opacity: 0;
+    }
+    15%{
+        opacity: 1;
+    }
+    25%{
+        transform: translate(25px, 20vh);
+    }
+    55%{
+        transform: translate(50px, 45vh);
+    }
+    80%{
+        opacity: 1;
+        transform: translate(45px, 70vh);
+    }
+    100%{
+        transform: translate(35px, 80vh);
+        opacity: 0;
+    }
+}
