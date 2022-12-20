@@ -238,7 +238,7 @@ body{
 .thiep-chuc.active{
     width: 700px;
     height: 400px;
-    animation:thiep-chuc 1s linear;
+    animation:thiep-chuc .7s linear;
 }
 .thiep-chuc.exit{
     width: 0;
