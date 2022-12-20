@@ -15,12 +15,12 @@
     font-size: 27px;
     font-weight: 1000;
     text-shadow: 1px 1px rgb(255, 18, 18),
-        2px 2px rgb(255, 73, 18),
-        3px 3px rgb(255, 117, 18),
-        4px 4px rgb(255, 141, 18),
-        5px 5px rgb(255, 192, 18),
-        6px 6px rgb(255, 223, 18),
-        7px 7px rgb(18, 255, 168);
+        2px 2px rgb(255, 54, 18),
+        3px 3px rgb(255, 81, 18),
+        4px 4px rgb(255, 121, 18),
+        5px 5px rgb(255, 156, 18),
+        6px 6px rgb(255, 152, 18),
+        7px 7px rgb(255, 216, 18);
     animation: ct-loader-1 1.5s ease infinite;
 }
 @keyframes ct-loader-1{
