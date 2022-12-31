@@ -14,6 +14,9 @@ body{
     margin: 0;
     padding: 0;
 }
+::selection{
+    background-color: transparent;
+}
 .container{
     top: 0;
     left: 0;
@@ -186,11 +189,22 @@ body{
     width: 0px;
     height: 0px;
     display: flex;
+    align-items: center;
+    justify-content: center;
     box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.44);
+    border-radius: 20px;
+}
+.ctn-thiep{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: flex;
     border-radius: 20px;
     align-items: center;
     justify-content: center;
     overflow: hidden;
+    top: 0;
+    left: 0;
 }
 .thoat{
     z-index: 300;
@@ -199,7 +213,6 @@ body{
     right: 10px;
     font-size: x-large;
 }
-
 .loi-chuc{
     width: 700px;
     height: 400px;
@@ -223,7 +236,6 @@ body{
     border-radius: 50%;
     box-shadow: inset 0px 0px 7px rgba(0, 0, 0, 0.704);
 }
-
 .loi-chuc-p{
     z-index: 201;
     position: absolute;
@@ -233,30 +245,32 @@ body{
     font-weight: bold;
     color: #600d0d;
     font-size: x-large;
-
 }
 .thiep-chuc.active{
-    width: 700px;
-    height: 400px;
-    animation:thiep-chuc .7s linear;
+    animation:thiep-chuc .5s linear forwards;
+}
+.img-2{
+    position: absolute;
+    width: 200px;
+    bottom:-50px;
+    right: -50px;
+    transform: scale(0) rotate(-15deg);
+    transition: 0.5s 0.5s ease;
+}
+.thiep-chuc.active .img-2{
+    transform: scale(1) rotate(0deg);
+}
+.thiep-chuc.exit .img-2{
+    transition: 0.3s;
 }
 .thiep-chuc.exit{
-    width: 0;
-    height: 0;
-    animation:thiep-chuc-exit .5s linear;
+    animation:thiep-chuc-exit .5s linear forwards;
 }
+
 @keyframes thiep-chuc {
     0%{
-        width: 0px;
-        height: 0px;
-    }
-    30%{
-        width: 50px;
-        height: 50px;
-    }
-    70%{
-        height: 50px;
         width: 700px;
+        height: 0px;
     }
     100%{
         width: 700px;
@@ -275,6 +289,32 @@ body{
     100%{
         width: 0;
         height: 0;
+    }
+}
+.img-1{
+    position: absolute;
+    width: 300px;
+    top: 0;
+    right: 0;
+    transform-origin: top center;
+    transform: translateX(50%);
+    z-index: 200;
+    pointer-events: none;
+    animation: phao 10s ease infinite;
+}
+.img-3{
+    position: absolute;
+    width: 200px;
+    bottom: -50px;
+    right: -10px;
+    animation: phao 20s ease infinite;
+}
+@keyframes phao {
+    0%, 100%{
+        transform: translateX(50%) rotate(-10deg);
+    }
+    50%{
+        transform: translateX(50%) rotate(5deg);
     }
 }
 @media (max-width: 930px) {
@@ -308,16 +348,8 @@ body{
     }
     @keyframes thiep-chuc {
         0%{
-            width: 0px;
-            height: 0px;
-        }
-        30%{
-            width: 50px;
-            height: 50px;
-        }
-        70%{
-            height: 50px;
             width: 500px;
+            height: 0px;
         }
         100%{
             width: 500px;
@@ -433,16 +465,8 @@ body{
     }
     @keyframes thiep-chuc {
         0%{
-            width: 0px;
-            height: 0px;
-        }
-        30%{
-            width: 50px;
-            height: 50px;
-        }
-        70%{
-            height: 50px;
             width: 300px;
+            height: 0px;
         }
         100%{
             width: 300px;
@@ -474,6 +498,10 @@ body{
         height: 50%;
         bottom: 0;
         color: #0e175a;
+    }
+    .img-3{
+        right:90%;
+        bottom: -90px;
     }
 
 }
