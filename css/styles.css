@@ -260,13 +260,24 @@ body{
 .thiep-chuc.active .img-2{
     transform: scale(1) rotate(0deg);
 }
-.thiep-chuc.exit .img-2{
+.thiep-chuc.exit .img-2, .thiep-chuc.exit .img-4{
     transition: 0.3s;
 }
 .thiep-chuc.exit{
     animation:thiep-chuc-exit .5s linear forwards;
 }
-
+.img-4{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 200px;
+    transform-origin: 50% 50%;
+    transform: scale(0) rotate(10deg) translate(-50%,-50%);
+    transition: 0.5s 0.5s ease;
+}
+.thiep-chuc.active .img-4{
+    transform: scale(1) translate(-50%,-50%);
+}
 @keyframes thiep-chuc {
     0%{
         width: 700px;
